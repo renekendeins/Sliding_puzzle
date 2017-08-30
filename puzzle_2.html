@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>gmarsi - Level 2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="script/script2.js"></script>
+	<script type="text/javascript" src="script/style2.js"></script>
+</head>
+<body onload="loadBackgrounds()">
+<style>
+
+	*{
+		font-family: 'Mukta Mahee', sans-serif;
+	}
+	
+	table{
+		width: 1000px;
+		height: 500px;
+		margin: 0 auto;
+	}
+	tr{
+		height: 100px;
+		width: 100px;
+	}
+	td{
+		border: 1px solid;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 20px;
+		padding: 0px;
+		/*background-color: rgb(167, 234, 255);*/
+	}
+	input:hover{
+		cursor: pointer;
+		
+	}
+
+	.empty{
+		background-color: none;
+	}
+	.filled{
+		background-color: 5px solid rgb(179, 210, 220) !important;
+	}
+	input{
+		width: 100%;
+		height: 100%;
+		border: none;
+		text-align: center;
+		font-size: 20px;
+		/*background-color: #a7eaff;*/
+	}
+	body{
+    	background-attachment: fixed;
+    	background-size: cover;
+    	background-position-y: center;
+	}
+
+	.divMovements, .clock{
+		background-color: #d7d4cd !important;
+	}
+
+	#restart{
+		height: 124px;
+		width: 100%;
+		font-size: 20px;
+		border:none;
+		background-color: transparent;
+		color: white;
+	}
+	#restart:hover{
+		cursor: pointer;
+	}
+
+	#btn-restart{
+		background-color: #8b8b8b !important;
+	}
+
+		#previous{
+		position: absolute;
+		left: 0;
+		top: 0;	
+		padding: 10px 30px;
+		width: 100px;
+		text-align: center;
+		background-color: #888888;
+		margin: 10px;
+		cursor: pointer;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+		color:white;
+	}
+	#next{
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 10px 30px;
+		width: 100px;
+		text-align: center;
+		background-color: #888888;
+		margin: 10px;
+		color:white;
+		cursor: pointer;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+	}
+
+
+</style>
+
+
+<a href="puzzle_1.html"><div id="previous"><i class="material-icons" style="font-size:36px">arrow_back</i></div></a>
+<!-- <a href="puzzle_3.html"><div id="next"><i class="material-icons" style="font-size:36px">arrow_forward</i></div></a> -->
+
+<table id="table" onclick="startClock()">
+	<tr>
+		<td><input onclick="checkSiblings(this.id)" readonly id="10" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="11" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="12" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="13" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="14" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="15" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="16" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="17" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="18" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="19" type="text"></td>
+		
+	</tr>
+	<tr>
+	    <td><input onclick="checkSiblings(this.id)" readonly id="30" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="31" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="32" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="33" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="34" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="35" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="36" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="37" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="38" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="39" type="text"></td>
+		
+	</tr>
+	<tr>
+		<td><input onclick="checkSiblings(this.id)" readonly id="50" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="51" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="52" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="53" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="54" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="55" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="56" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="57" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="58" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="59" type="text"></td>
+		
+	</tr>
+
+	<tr style="height:100px;">
+		<td colspan="4" class="divMovements"><div><span>Movements: </span><span id="movements">0</span></div></td>
+		<td class="clock" colspan="3"><p id="clock">0</p></td>
+		<td colspan="3" class="divMovements" id="btn-restart"><div  ><button id="restart" onclick="reload()">Restart</button></div></td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+</body>
+</html>
