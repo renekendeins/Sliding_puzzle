@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>gmarsi - Level 2</title>
+	<title>gmarsi - Level 3</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script type="text/javascript" src="script/script2.js"></script>
-	<script type="text/javascript" src="script/style2.js"></script>
+	<script type="text/javascript" src="script/script3.js"></script>
+	<script type="text/javascript" src="script/style3.js"></script>
 </head>
 <body onload="loadBackgrounds()">
 <style>
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 </style>
 <style>
 
 	*{
-		font-family: 'Raleway', sans-serif;
+		font-family: 'Indie Flower', cursive;
+		font-size: 30px !important;
+	}
+	body{
+		background-repeat: space;
 	}
 	
 	table{
@@ -32,10 +36,28 @@
 		border: 1px solid;
 		text-align: center;
 		vertical-align: middle;
-		font-size: 20px;
+		
 		padding: 0px;
 		/*background-color: rgb(167, 234, 255);*/
 	}
+
+	#table tr:nth-child(1) td input{
+		background-color: rgba(63, 185, 134, 0.62) !important;
+	
+	}
+	#table tr:nth-child(2) td input{
+		background-color:  rgba(100, 204, 220, 0.44) !important;
+	
+	}
+	#table tr:nth-child(3) td input{
+		    background-color: rgba(229, 249, 255, 0.84) !important;
+	
+	}
+	#table tr:nth-child(4) td input{
+		    background-color: rgba(255, 211, 174, 0.76);!important;
+	
+	}
+
 	input:hover{
 		cursor: pointer;
 		
@@ -62,7 +84,7 @@
 	}
 
 	.divMovements, .clock{
-		background-color: #d7d4cd !important;
+		background-color: rgba(218, 189, 121, 0.75) !important;
 	}
 
 	#restart{
@@ -78,32 +100,32 @@
 	}
 
 	#btn-restart{
-		background-color: #8b8b8b !important;
+		background-color: rgba(31, 187, 58, 0.64) !important;
 	}
 
 		#previous{
-		/*position: absolute;*/
-		left: 0;
-		top: 0;	
+		
 		padding: 10px 30px;
 		width: 100px;
 		text-align: center;
-		background-color: #888888;
+		background-color: #75c5c2;
+		
 		cursor: pointer;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 		color:white;
 	}
 	#next{
-		/*position: absolute;*/
+		position: absolute;
 		right: 0;
 		top: 0;
 		padding: 10px 30px;
 		width: 100px;
 		text-align: center;
-		background-color: #888888;
+		background-color: #75c5c2;
+		margin: 10px;
 		color:white;
-		float: right;
 		cursor: pointer;
+		float: right;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 	}
 
@@ -112,8 +134,7 @@
 
 
 
-
-
+<!-- <a href="puzzle_3.html"><div id="next"><i class="material-icons" style="font-size:36px">arrow_forward</i></div></a> -->
 
 <table id="table" onclick="startClock()">
 	<tr>
@@ -155,6 +176,19 @@
 		<td><input onclick="checkSiblings(this.id)" readonly id="59" type="text"></td>
 		
 	</tr>
+		<tr>
+		<td><input onclick="checkSiblings(this.id)" readonly id="70" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="71" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="72" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="73" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="74" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="75" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="76" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="77" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="78" type="text"></td>
+		<td><input onclick="checkSiblings(this.id)" readonly id="79" type="text"></td>
+		
+	</tr>
 
 	<tr style="height:100px;">
 		<td colspan="4" class="divMovements"><div><span>Movements: </span><span id="movements">0</span></div></td>
@@ -162,9 +196,9 @@
 		<td colspan="3" class="divMovements" id="btn-restart"><div  ><button id="restart" onclick="reload()">Restart</button></div></td>
 	</tr>
 	<tr>
-		<td colspan="2" style="border:none"><a href="puzzle_1.html"><div id="previous"><i class="material-icons" style="font-size:36px">arrow_back</i></div></a></td>
-		<td colspan="6" style="border:none"></td>
-		<td colspan="2" style="border:none"><a href="puzzle_3.html"><div id="next"><i class="material-icons" style="font-size:36px">arrow_forward</i></div></a></td>
+		<td colspan="2" style="border:none">
+			<a href="puzzle_2.html"><div id="previous"><i class="material-icons" style="font-size:36px">arrow_back</i></div></a>
+		</td>
 	</tr>
 </table>
 
@@ -183,6 +217,7 @@
 
 
 
-		
+			<script type="text/javascript" src="script/script3.js"></script>
+	<script type="text/javascript" src="script/style3.js"></script>
 </body>
 </html>
